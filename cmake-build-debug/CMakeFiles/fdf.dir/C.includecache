@@ -1,0 +1,34 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/Users/vdanyliu/Desktop/fdf/fdf.h
+libft/libft.h
+/Users/vdanyliu/Desktop/fdf/libft/libft.h
+mlx.h
+/Users/vdanyliu/Desktop/fdf/mlx.h
+
+/Users/vdanyliu/Desktop/fdf/fdf_initiation.c
+fdf.h
+/Users/vdanyliu/Desktop/fdf/fdf.h
+
+/Users/vdanyliu/Desktop/fdf/libft/libft.h
+fcntl.h
+-
+string.h
+-
+unistd.h
+-
+stdlib.h
+-
+stdio.h
+-
+sys/stat.h
+-
+sys/types.h
+-
+
