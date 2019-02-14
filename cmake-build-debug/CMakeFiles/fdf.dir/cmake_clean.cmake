@@ -1,6 +1,8 @@
 file(REMOVE_RECURSE
   "CMakeFiles/fdf.dir/fdf_error.c.o"
+  "CMakeFiles/fdf.dir/fdf_free.c.o"
   "CMakeFiles/fdf.dir/fdf_initiation.c.o"
+  "CMakeFiles/fdf.dir/fdf_math_function.c.o"
   "CMakeFiles/fdf.dir/fdf_validator.c.o"
   "CMakeFiles/fdf.dir/libft/ft_atoi.c.o"
   "CMakeFiles/fdf.dir/libft/ft_bzero.c.o"

@@ -5,12 +5,22 @@ CMakeFiles/fdf.dir/fdf_error.c.o
  /Users/vdanyliu/Desktop/fdf/fdf.h
  /Users/vdanyliu/Desktop/fdf/fdf_error.c
  /Users/vdanyliu/Desktop/fdf/libft/libft.h
+CMakeFiles/fdf.dir/fdf_free.c.o
+ /Users/vdanyliu/Desktop/fdf/fdf.h
+ /Users/vdanyliu/Desktop/fdf/fdf_free.c
+ /Users/vdanyliu/Desktop/fdf/libft/libft.h
 CMakeFiles/fdf.dir/fdf_initiation.c.o
  /Users/vdanyliu/Desktop/fdf/fdf.h
  /Users/vdanyliu/Desktop/fdf/fdf_initiation.c
  /Users/vdanyliu/Desktop/fdf/libft/libft.h
+CMakeFiles/fdf.dir/fdf_math_function.c.o
+ /Users/vdanyliu/Desktop/fdf/fdf.h
+ /Users/vdanyliu/Desktop/fdf/fdf_math_function.c
+ /Users/vdanyliu/Desktop/fdf/libft/libft.h
 CMakeFiles/fdf.dir/fdf_validator.c.o
+ /Users/vdanyliu/Desktop/fdf/fdf.h
  /Users/vdanyliu/Desktop/fdf/fdf_validator.c
+ /Users/vdanyliu/Desktop/fdf/libft/libft.h
 CMakeFiles/fdf.dir/libft/ft_atoi.c.o
  /Users/vdanyliu/Desktop/fdf/libft/ft_atoi.c
  /Users/vdanyliu/Desktop/fdf/libft/libft.h

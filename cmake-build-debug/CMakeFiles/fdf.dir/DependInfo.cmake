@@ -5,7 +5,9 @@ set(CMAKE_DEPENDS_LANGUAGES
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_C
   "/Users/vdanyliu/Desktop/fdf/fdf_error.c" "/Users/vdanyliu/Desktop/fdf/cmake-build-debug/CMakeFiles/fdf.dir/fdf_error.c.o"
+  "/Users/vdanyliu/Desktop/fdf/fdf_free.c" "/Users/vdanyliu/Desktop/fdf/cmake-build-debug/CMakeFiles/fdf.dir/fdf_free.c.o"
   "/Users/vdanyliu/Desktop/fdf/fdf_initiation.c" "/Users/vdanyliu/Desktop/fdf/cmake-build-debug/CMakeFiles/fdf.dir/fdf_initiation.c.o"
+  "/Users/vdanyliu/Desktop/fdf/fdf_math_function.c" "/Users/vdanyliu/Desktop/fdf/cmake-build-debug/CMakeFiles/fdf.dir/fdf_math_function.c.o"
   "/Users/vdanyliu/Desktop/fdf/fdf_validator.c" "/Users/vdanyliu/Desktop/fdf/cmake-build-debug/CMakeFiles/fdf.dir/fdf_validator.c.o"
   "/Users/vdanyliu/Desktop/fdf/libft/ft_atoi.c" "/Users/vdanyliu/Desktop/fdf/cmake-build-debug/CMakeFiles/fdf.dir/libft/ft_atoi.c.o"
   "/Users/vdanyliu/Desktop/fdf/libft/ft_bzero.c" "/Users/vdanyliu/Desktop/fdf/cmake-build-debug/CMakeFiles/fdf.dir/libft/ft_bzero.c.o"

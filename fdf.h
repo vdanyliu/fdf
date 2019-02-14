@@ -7,6 +7,7 @@
 
 # include "libft/libft.h"
 # include "mlx.h"
+# include <math.h>
 
 typedef struct 			s_mlx_ptr
 {
@@ -17,7 +18,7 @@ typedef struct 			s_mlx_ptr
 typedef struct			s_map_char
 {
 	int 				z;
-	int 				color;
+	int					color;
 	struct s_map_char	*next;
 	struct s_map_char	*down;
 	struct s_map_char	*prev;
@@ -34,5 +35,6 @@ typedef	struct 			s_map_lines
 t_map_lines				*fdf_initiation(int *fd, char *param);
 void					fdf_error(char *str, int error_code);
 int 					fdf_validator(int fd);
-
+void					fdf_free_split(char **str);
+int						fdf_16to10(char *str);
 #endif

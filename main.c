@@ -36,7 +36,7 @@ t_mlx_ptr	*mlx_ptr_init()
 
 	mlx_ptrs = (t_mlx_ptr*)(malloc)(sizeof(*mlx_ptrs));
 	mlx_ptrs->mlx_ptr = mlx_init();
-	mlx_ptrs->win_ptr = mlx_new_window(mlx_ptrs->mlx_ptr, 500, 500, "fdf");
+	mlx_ptrs->win_ptr = mlx_new_window(mlx_ptrs->mlx_ptr, 2000, 1000, "fdf");
 	return (mlx_ptrs);
 }
 
@@ -47,8 +47,9 @@ int 		main(int argc, char **argv)
 	int 		fd;
 
 	map = fdf_initiation(&fd, argv[1]);
-	mlx_ptrs = mlx_ptr_init();
-	fdf_mlx_manipulation(&mlx_ptrs);
-	mlx_loop(mlx_ptrs->mlx_ptr);
+	//mlx_ptrs = mlx_ptr_init();
+	//df_mlx_manipulation(&mlx_ptrs);
+	//mlx_loop(mlx_ptrs->mlx_ptr);ф
+	system("leaks -q fdf");
 	return (0);
 }

@@ -86,7 +86,13 @@
 		<Unit filename="/Users/vdanyliu/Desktop/fdf/fdf_error.c">
 			<Option target="fdf"/>
 		</Unit>
+		<Unit filename="/Users/vdanyliu/Desktop/fdf/fdf_free.c">
+			<Option target="fdf"/>
+		</Unit>
 		<Unit filename="/Users/vdanyliu/Desktop/fdf/fdf_initiation.c">
+			<Option target="fdf"/>
+		</Unit>
+		<Unit filename="/Users/vdanyliu/Desktop/fdf/fdf_math_function.c">
 			<Option target="fdf"/>
 		</Unit>
 		<Unit filename="/Users/vdanyliu/Desktop/fdf/fdf_validator.c">

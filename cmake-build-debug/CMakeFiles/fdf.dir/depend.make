@@ -5,11 +5,21 @@ CMakeFiles/fdf.dir/fdf_error.c.o: ../fdf.h
 CMakeFiles/fdf.dir/fdf_error.c.o: ../fdf_error.c
 CMakeFiles/fdf.dir/fdf_error.c.o: ../libft/libft.h
 
+CMakeFiles/fdf.dir/fdf_free.c.o: ../fdf.h
+CMakeFiles/fdf.dir/fdf_free.c.o: ../fdf_free.c
+CMakeFiles/fdf.dir/fdf_free.c.o: ../libft/libft.h
+
 CMakeFiles/fdf.dir/fdf_initiation.c.o: ../fdf.h
 CMakeFiles/fdf.dir/fdf_initiation.c.o: ../fdf_initiation.c
 CMakeFiles/fdf.dir/fdf_initiation.c.o: ../libft/libft.h
 
+CMakeFiles/fdf.dir/fdf_math_function.c.o: ../fdf.h
+CMakeFiles/fdf.dir/fdf_math_function.c.o: ../fdf_math_function.c
+CMakeFiles/fdf.dir/fdf_math_function.c.o: ../libft/libft.h
+
+CMakeFiles/fdf.dir/fdf_validator.c.o: ../fdf.h
 CMakeFiles/fdf.dir/fdf_validator.c.o: ../fdf_validator.c
+CMakeFiles/fdf.dir/fdf_validator.c.o: ../libft/libft.h
 
 CMakeFiles/fdf.dir/libft/ft_atoi.c.o: ../libft/ft_atoi.c
 CMakeFiles/fdf.dir/libft/ft_atoi.c.o: ../libft/libft.h

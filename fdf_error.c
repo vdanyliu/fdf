@@ -6,8 +6,7 @@
 
 void	fdf_error(char *str, int error_code)
 {
-	if (str == NULL || error_code == 0)
-		exit (-42);
+	system("leaks -q fdf");
 	ft_putendl(str);
 	exit(error_code);
 }

@@ -150,6 +150,33 @@ fdf_error.c.s:
 	$(MAKE) -f CMakeFiles/fdf.dir/build.make CMakeFiles/fdf.dir/fdf_error.c.s
 .PHONY : fdf_error.c.s
 
+fdf_free.o: fdf_free.c.o
+
+.PHONY : fdf_free.o
+
+# target to build an object file
+fdf_free.c.o:
+	$(MAKE) -f CMakeFiles/fdf.dir/build.make CMakeFiles/fdf.dir/fdf_free.c.o
+.PHONY : fdf_free.c.o
+
+fdf_free.i: fdf_free.c.i
+
+.PHONY : fdf_free.i
+
+# target to preprocess a source file
+fdf_free.c.i:
+	$(MAKE) -f CMakeFiles/fdf.dir/build.make CMakeFiles/fdf.dir/fdf_free.c.i
+.PHONY : fdf_free.c.i
+
+fdf_free.s: fdf_free.c.s
+
+.PHONY : fdf_free.s
+
+# target to generate assembly for a file
+fdf_free.c.s:
+	$(MAKE) -f CMakeFiles/fdf.dir/build.make CMakeFiles/fdf.dir/fdf_free.c.s
+.PHONY : fdf_free.c.s
+
 fdf_initiation.o: fdf_initiation.c.o
 
 .PHONY : fdf_initiation.o
@@ -176,6 +203,33 @@ fdf_initiation.s: fdf_initiation.c.s
 fdf_initiation.c.s:
 	$(MAKE) -f CMakeFiles/fdf.dir/build.make CMakeFiles/fdf.dir/fdf_initiation.c.s
 .PHONY : fdf_initiation.c.s
+
+fdf_math_function.o: fdf_math_function.c.o
+
+.PHONY : fdf_math_function.o
+
+# target to build an object file
+fdf_math_function.c.o:
+	$(MAKE) -f CMakeFiles/fdf.dir/build.make CMakeFiles/fdf.dir/fdf_math_function.c.o
+.PHONY : fdf_math_function.c.o
+
+fdf_math_function.i: fdf_math_function.c.i
+
+.PHONY : fdf_math_function.i
+
+# target to preprocess a source file
+fdf_math_function.c.i:
+	$(MAKE) -f CMakeFiles/fdf.dir/build.make CMakeFiles/fdf.dir/fdf_math_function.c.i
+.PHONY : fdf_math_function.c.i
+
+fdf_math_function.s: fdf_math_function.c.s
+
+.PHONY : fdf_math_function.s
+
+# target to generate assembly for a file
+fdf_math_function.c.s:
+	$(MAKE) -f CMakeFiles/fdf.dir/build.make CMakeFiles/fdf.dir/fdf_math_function.c.s
+.PHONY : fdf_math_function.c.s
 
 fdf_validator.o: fdf_validator.c.o
 
@@ -1971,9 +2025,15 @@ help:
 	@echo "... fdf_error.o"
 	@echo "... fdf_error.i"
 	@echo "... fdf_error.s"
+	@echo "... fdf_free.o"
+	@echo "... fdf_free.i"
+	@echo "... fdf_free.s"
 	@echo "... fdf_initiation.o"
 	@echo "... fdf_initiation.i"
 	@echo "... fdf_initiation.s"
+	@echo "... fdf_math_function.o"
+	@echo "... fdf_math_function.i"
+	@echo "... fdf_math_function.s"
 	@echo "... fdf_validator.o"
 	@echo "... fdf_validator.i"
 	@echo "... fdf_validator.s"
