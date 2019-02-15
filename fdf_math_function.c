@@ -15,7 +15,7 @@ int 		fdf_16to10(char *str)
 	res = 0;
 	byte = 0;
 	if (str == NULL)
-		return (0);
+		return (16777215);
 	buff = str;
 	buff = buff + 2;
 	while (power >= 0)

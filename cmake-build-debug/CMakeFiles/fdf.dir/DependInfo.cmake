@@ -74,6 +74,7 @@ set(CMAKE_DEPENDS_CHECK_C
   "/Users/vdanyliu/Desktop/fdf/libft/ft_toupper.c" "/Users/vdanyliu/Desktop/fdf/cmake-build-debug/CMakeFiles/fdf.dir/libft/ft_toupper.c.o"
   "/Users/vdanyliu/Desktop/fdf/libft/get_next_line.c" "/Users/vdanyliu/Desktop/fdf/cmake-build-debug/CMakeFiles/fdf.dir/libft/get_next_line.c.o"
   "/Users/vdanyliu/Desktop/fdf/main.c" "/Users/vdanyliu/Desktop/fdf/cmake-build-debug/CMakeFiles/fdf.dir/main.c.o"
+  "/Users/vdanyliu/Desktop/fdf/mlx_print.c" "/Users/vdanyliu/Desktop/fdf/cmake-build-debug/CMakeFiles/fdf.dir/mlx_print.c.o"
   )
 set(CMAKE_C_COMPILER_ID "AppleClang")
 

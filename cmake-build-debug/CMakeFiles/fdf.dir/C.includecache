@@ -14,10 +14,6 @@ mlx.h
 math.h
 -
 
-/Users/vdanyliu/Desktop/fdf/fdf_initiation.c
-fdf.h
-/Users/vdanyliu/Desktop/fdf/fdf.h
-
 /Users/vdanyliu/Desktop/fdf/libft/libft.h
 fcntl.h
 -
@@ -33,4 +29,8 @@ sys/stat.h
 -
 sys/types.h
 -
+
+/Users/vdanyliu/Desktop/fdf/mlx_print.c
+fdf.h
+/Users/vdanyliu/Desktop/fdf/fdf.h
 

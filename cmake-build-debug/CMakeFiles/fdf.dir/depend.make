@@ -208,3 +208,7 @@ CMakeFiles/fdf.dir/main.c.o: ../fdf.h
 CMakeFiles/fdf.dir/main.c.o: ../libft/libft.h
 CMakeFiles/fdf.dir/main.c.o: ../main.c
 
+CMakeFiles/fdf.dir/mlx_print.c.o: ../fdf.h
+CMakeFiles/fdf.dir/mlx_print.c.o: ../libft/libft.h
+CMakeFiles/fdf.dir/mlx_print.c.o: ../mlx_print.c
+

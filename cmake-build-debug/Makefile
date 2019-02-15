@@ -2013,6 +2013,33 @@ main.c.s:
 	$(MAKE) -f CMakeFiles/fdf.dir/build.make CMakeFiles/fdf.dir/main.c.s
 .PHONY : main.c.s
 
+mlx_print.o: mlx_print.c.o
+
+.PHONY : mlx_print.o
+
+# target to build an object file
+mlx_print.c.o:
+	$(MAKE) -f CMakeFiles/fdf.dir/build.make CMakeFiles/fdf.dir/mlx_print.c.o
+.PHONY : mlx_print.c.o
+
+mlx_print.i: mlx_print.c.i
+
+.PHONY : mlx_print.i
+
+# target to preprocess a source file
+mlx_print.c.i:
+	$(MAKE) -f CMakeFiles/fdf.dir/build.make CMakeFiles/fdf.dir/mlx_print.c.i
+.PHONY : mlx_print.c.i
+
+mlx_print.s: mlx_print.c.s
+
+.PHONY : mlx_print.s
+
+# target to generate assembly for a file
+mlx_print.c.s:
+	$(MAKE) -f CMakeFiles/fdf.dir/build.make CMakeFiles/fdf.dir/mlx_print.c.s
+.PHONY : mlx_print.c.s
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -2232,6 +2259,9 @@ help:
 	@echo "... main.o"
 	@echo "... main.i"
 	@echo "... main.s"
+	@echo "... mlx_print.o"
+	@echo "... mlx_print.i"
+	@echo "... mlx_print.s"
 .PHONY : help
 
 

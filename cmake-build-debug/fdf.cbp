@@ -296,6 +296,9 @@
 		<Unit filename="/Users/vdanyliu/Desktop/fdf/main.c">
 			<Option target="fdf"/>
 		</Unit>
+		<Unit filename="/Users/vdanyliu/Desktop/fdf/mlx_print.c">
+			<Option target="fdf"/>
+		</Unit>
 		<Unit filename="/Users/vdanyliu/Desktop/fdf/CMakeLists.txt">
 			<Option virtualFolder="CMake Files\"/>
 		</Unit>

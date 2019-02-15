@@ -1,5 +1,35 @@
 #include "fdf.h"
 
+void		fdf_debug_print_map(t_map_lines *map)
+{
+	t_map_lines	*buff;
+	char		*str;
+
+	buff = map;
+	while (buff != NULL)
+	{
+		str = ft_itoa(buff->map_chars->x);
+		ft_putstr(str);
+		free(str);
+		ft_putstr(",");
+		str = ft_itoa(buff->map_chars->y);
+		ft_putstr(str);
+		ft_putstr(",");
+		free(str);
+		str = ft_itoa(buff->map_chars->z);
+		ft_putstr(str);
+		free(str);
+		ft_putstr(",color=");
+		str = ft_itoa(buff->map_chars->color);
+		ft_putstr(str);
+		free(str);
+		write(1, "\t", 1);
+		if ((buff->map_chars->next) == NULL)
+			write(1, "\n", 1);
+		buff = buff->next;
+	}
+}
+
 int 		key_release(int keycode, void *param)
 {
 	(void)param;
@@ -47,9 +77,12 @@ int 		main(int argc, char **argv)
 	int 		fd;
 
 	map = fdf_initiation(&fd, argv[1]);
-	//mlx_ptrs = mlx_ptr_init();
-	//df_mlx_manipulation(&mlx_ptrs);
-	//mlx_loop(mlx_ptrs->mlx_ptr);ф
+	fdf_debug_print_map(map);
+	mlx_ptrs = mlx_ptr_init();
+	fdf_mlx_manipulation(&mlx_ptrs);
+	fdf_debug_print_map_mlx(mlx_ptrs, map);
+	system("leaks -q fdf");
+	mlx_loop(mlx_ptrs->mlx_ptr);
 	system("leaks -q fdf");
 	return (0);
 }

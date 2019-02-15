@@ -4,28 +4,53 @@
 
 #include "fdf.h"
 
-void			fdf_add_new_info(t_map_lines **buff, t_map_char *info)
+void			fdf_xy_initiation(t_map_lines *map)
+{
+	t_map_char	*buff;
+	t_map_char	*buff_down;
+	int 		x;
+	int 		y;
+
+	buff = map->map_chars;
+	y = 0;
+	while (buff != NULL)
+	{
+		x = 0;
+		buff_down = buff->down;
+		while (buff != NULL)
+		{
+			buff->x = x;
+			buff->y	= y;
+			x++;
+			buff = buff->next;
+		}
+		buff = buff_down;
+		y++;
+	}
+}
+
+t_map_lines		*fdf_add_new_info(t_map_lines *buff, t_map_char *info)
 {
 	t_map_lines		*buff_buff;
 
-	buff_buff = *buff;
-	if (*buff == NULL)
+	buff_buff = buff;
+	if (buff == NULL)
 	{
-		*buff = (t_map_lines*)malloc(sizeof(*buff));
-		(*buff)->map_chars = info;
-		(*buff)->prev = NULL;
-		(*buff)->next = NULL;
-		return ;
+		buff = (t_map_lines*)malloc(sizeof(*buff));
+		(buff)->map_chars = info;
+		(buff)->prev = NULL;
+		(buff)->next = NULL;
+		return (buff);
 	}
-	while((*buff)->next != NULL)
-		(*buff) = (*buff)->next;
-	(*buff)->next = (t_map_lines*)malloc(sizeof(*buff));
-	(*buff)->next->prev = (*buff);
-	(*buff)->next->map_chars = info;
-	(*buff)->next->next = NULL;
-	(*buff)->map_chars->next = info;
-	(*buff)->next->map_chars->prev = (*buff)->map_chars;
-	*buff = buff_buff;
+	while((buff)->next != NULL)
+		(buff) = (buff)->next;
+	(buff)->next = (t_map_lines*)malloc(sizeof(*buff));
+	(buff)->next->prev = (buff);
+	(buff)->next->map_chars = info;
+	(buff)->next->next = NULL;
+	(buff)->map_chars->next = (buff)->next->map_chars;
+	(buff)->next->map_chars->prev = (buff)->map_chars;
+	return (buff_buff);
 }
 
 t_map_char		*fdf_info_read(char *str)
@@ -55,6 +80,8 @@ t_map_lines		*fdf_add_end_map(t_map_lines *map, t_map_lines *buff)
 	map_buff_syn = map;
 	while (map_buff_end->next != NULL)
 		map_buff_end = map_buff_end->next;
+	while (map_buff_syn->map_chars->down != NULL)
+		map_buff_syn = map_buff_syn->next;
 	map_buff_end->next = buff;
 	while (buff != NULL)
 	{
@@ -78,7 +105,7 @@ t_map_lines		*fdf_create_tmap(const char *str)
 	while (*buffstr != 0)
 	{
 		info = fdf_info_read(*buffstr);
-		fdf_add_new_info(&buff, info);
+		buff = fdf_add_new_info(buff, info);
 		buffstr++;
 	}
 	fdf_free_split(buffstrhead);
@@ -104,5 +131,6 @@ t_map_lines		*fdf_initiation(int *fd, char *param)
 		map = fdf_add_end_map(map, buff);
 		free(line);
 	}
+	fdf_xy_initiation(map);
 	return (map);
 }

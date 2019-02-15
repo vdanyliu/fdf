@@ -60,6 +60,7 @@ static int 	fdf_symbols_cheker(char *str)
 		buff++;
 	}
 	fdf_free_split(str_split);
+	return (0);
 }
 
 static int	fdf_argument_count_cheker(char *str)

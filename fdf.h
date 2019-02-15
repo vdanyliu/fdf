@@ -18,6 +18,8 @@ typedef struct 			s_mlx_ptr
 typedef struct			s_map_char
 {
 	int 				z;
+	int 				x;
+	int 				y;
 	int					color;
 	struct s_map_char	*next;
 	struct s_map_char	*down;
@@ -37,4 +39,7 @@ void					fdf_error(char *str, int error_code);
 int 					fdf_validator(int fd);
 void					fdf_free_split(char **str);
 int						fdf_16to10(char *str);
+void					fdf_debug_print_map(t_map_lines *map);
+void					fdf_debug_print_map_mlx(t_mlx_ptr *mlx, t_map_lines *map);
+
 #endif
