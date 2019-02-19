@@ -99,7 +99,7 @@ t_map_lines		*fdf_center_map(t_map_lines *map)
 
 	buff = map;
 	buff = fdf_alloc_map_center(buff);
-	xc = 1000 - buff->map_chars->x;
+	xc = 800 - buff->map_chars->x;
 	yc = 500 - buff->map_chars->y;
 	buff = map;
 	while (buff != NULL)
@@ -137,7 +137,10 @@ void			fdf_print_map_mlx(t_mlx_ptr *mlx)
 	t_map_lines	*buff;
 
 	mlx_clear_window(mlx->mlx_ptr, mlx->win_ptr);
-	mlx->map_iso = fdf_iso_map(mlx->map);
+	fdf_free(mlx->map_iso);
+	mlx->map_iso = fdf_copy_map(mlx->map);
+	//mlx->map_iso = fdf_center_map(mlx->map_iso);
+	mlx->map_iso = fdf_iso_map(mlx->map_iso);
 	buff = mlx->map_iso;
 	while (buff != NULL)
 	{

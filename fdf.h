@@ -11,9 +11,9 @@
 
 typedef struct			s_map_char
 {
-	int 				z;
-	int 				x;
-	int 				y;
+	double				z;
+	double				x;
+	double					y;
 	int					color;
 	struct s_map_char	*next;
 	struct s_map_char	*down;
@@ -33,6 +33,7 @@ typedef struct 			s_mlx_ptr
 	void				*mlx_ptr;
 	void				*win_ptr;
 	struct s_map_lines	*map;
+	struct s_map_lines	*map_origin;
 	struct s_map_lines	*map_iso;
 }						t_mlx_ptr;
 
@@ -46,10 +47,11 @@ void					fdf_print_map_mlx(t_mlx_ptr *mlx);
 void					fdf_print_map_mlx_corr(t_mlx_ptr *mlx);
 void					fdf_move_map(int i, void *mlx);
 void					fdf_zoom_map_xy(int i, void *mlx);
+void					fdf_rotate_zaxis(int i, void *mlx);
 t_map_lines				*fdf_center_map(t_map_lines *map);
 void					fdf_multiply_z(int i, void *mlxv);
 void					fdf_free(t_map_lines *leak);
 t_map_lines				*fdf_iso_map(t_map_lines *map);
-t_map_lines				*fdf_copy_map(t_map_lines const *origin);
+t_map_lines				*fdf_copy_map(t_map_lines *origin);
 
 #endif

@@ -18,6 +18,8 @@ void	fdf_free_split(char **str)
 
 void	fdf_free(t_map_lines *leak)
 {
+	if (leak == NULL)
+		return ;
 	while (leak->next != NULL)
 	{
 		leak = leak->next;

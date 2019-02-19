@@ -21,11 +21,11 @@ void			fdf_xy_initiation(t_map_lines *map)
 		{
 			buff->x = x;
 			buff->y	= y;
-			x++;
+			x = x + 10;
 			buff = buff->next;
 		}
 		buff = buff_down;
-		y++;
+		y = y + 10;
 	}
 }
 
@@ -83,6 +83,7 @@ t_map_lines		*fdf_add_end_map(t_map_lines *map, t_map_lines *buff)
 	while (map_buff_syn->map_chars->down != NULL)
 		map_buff_syn = map_buff_syn->next;
 	map_buff_end->next = buff;
+	buff->prev = map_buff_end;
 	while (buff != NULL)
 	{
 		map_buff_syn->map_chars->down = buff->map_chars;
@@ -134,4 +135,44 @@ t_map_lines		*fdf_initiation(int *fd, char *param)
 	fdf_xy_initiation(map);
 	close(*fd);
 	return (map);
+}
+
+t_map_char		*fdf_copy_info(t_map_char *origin)
+{
+	t_map_char *back;
+
+	back = (t_map_char*)malloc(sizeof(*back));
+	back->color = origin->color;
+	back->x = origin->x;
+	back->y = origin->y;
+	back->z = origin->z;
+	back->next = NULL;
+	back->down = NULL;
+	back->prev = NULL;
+	return (back);
+}
+
+t_map_lines		*fdf_copy_map(t_map_lines *origin)
+{
+	t_map_lines	*buff;
+	t_map_lines *copy_head;
+	t_map_lines	*copy_buff;
+	t_map_char	*buff_info;
+
+	copy_head = NULL;
+	copy_buff = NULL;
+	buff = origin;
+	while (buff != NULL)
+	{
+		while (buff->map_chars->next)
+		{
+			copy_buff = fdf_add_new_info(copy_buff, fdf_copy_info(buff->map_chars));
+			buff = buff->next;
+		}
+		copy_buff = fdf_add_new_info(copy_buff, fdf_copy_info(buff->map_chars));
+		copy_head = fdf_add_end_map(copy_head, copy_buff);
+		copy_buff = NULL;
+		buff = buff->next;
+	}
+	return (copy_head);
 }

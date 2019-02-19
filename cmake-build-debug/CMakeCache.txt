@@ -200,12 +200,6 @@ fdf_BINARY_DIR:STATIC=/Users/vdanyliu/Desktop/fdf/cmake-build-debug
 //Value Computed by CMake
 fdf_SOURCE_DIR:STATIC=/Users/vdanyliu/Desktop/fdf
 
-//Value Computed by CMake
-pdf_BINARY_DIR:STATIC=/Users/vdanyliu/Desktop/fdf/cmake-build-debug
-
-//Value Computed by CMake
-pdf_SOURCE_DIR:STATIC=/Users/vdanyliu/Desktop/fdf
-
 
 ########################
 # INTERNAL cache entries
