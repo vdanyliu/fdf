@@ -13,6 +13,10 @@ CMakeFiles/fdf.dir/fdf_initiation.c.o: ../fdf.h
 CMakeFiles/fdf.dir/fdf_initiation.c.o: ../fdf_initiation.c
 CMakeFiles/fdf.dir/fdf_initiation.c.o: ../libft/libft.h
 
+CMakeFiles/fdf.dir/fdf_map_manipulation.c.o: ../fdf.h
+CMakeFiles/fdf.dir/fdf_map_manipulation.c.o: ../fdf_map_manipulation.c
+CMakeFiles/fdf.dir/fdf_map_manipulation.c.o: ../libft/libft.h
+
 CMakeFiles/fdf.dir/fdf_math_function.c.o: ../fdf.h
 CMakeFiles/fdf.dir/fdf_math_function.c.o: ../fdf_math_function.c
 CMakeFiles/fdf.dir/fdf_math_function.c.o: ../libft/libft.h

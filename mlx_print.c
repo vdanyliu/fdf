@@ -99,36 +99,14 @@ t_map_lines		*fdf_center_map(t_map_lines *map)
 
 	buff = map;
 	buff = fdf_alloc_map_center(buff);
-	xc = 1500 / 2 - buff->map_chars->x / 2;
-	yc = 600 / 2 - buff->map_chars->y / 2;
+	xc = 1000 - buff->map_chars->x;
+	yc = 500 - buff->map_chars->y;
 	buff = map;
 	while (buff != NULL)
 	{
 		buff->map_chars->x += xc;
 		buff->map_chars->y += yc;
 		buff = buff->next;
-	}
-	return (map);
-}
-
-t_map_lines		*fdf_zoom_map(t_map_lines *map)
-{
-	t_map_lines	*buff;
-	t_map_lines	*buff_last;
-
-	buff_last = map;
-	while (buff_last->next != NULL)
-		buff_last = buff_last->next;
-	while (buff_last->map_chars->x < 400 && buff_last->map_chars->y < 400)
-	{
-		buff = map;
-		while (buff != NULL)
-		{
-			buff->map_chars->x *= 2;
-			buff->map_chars->y *= 2;
-			buff->map_chars->z *= 1.8;
-			buff = buff->next;
-		}
 	}
 	return (map);
 }
@@ -150,21 +128,32 @@ t_map_lines		*fdf_iso_map(t_map_lines *map)
 		buff->map_chars->y = (int)((x + y) * sin(0.523599) - z);
 		buff = buff->next;
 	}
+	map = fdf_center_map(map);
 	return (map);
 }
 
-void			fdf_debug_print_map_mlx(t_mlx_ptr *mlx, t_map_lines *map)
+void			fdf_print_map_mlx(t_mlx_ptr *mlx)
 {
-	t_map_lines		*buff;
-	t_map_lines		*buff_big;
+	t_map_lines	*buff;
 
-	map = fdf_zoom_map(map);
-	map = fdf_iso_map(map);
-	map = fdf_center_map(map);
-	buff_big = map;
-	while (buff_big != NULL)
+	mlx_clear_window(mlx->mlx_ptr, mlx->win_ptr);
+	mlx->map_iso = fdf_iso_map(mlx->map);
+	buff = mlx->map_iso;
+	while (buff != NULL)
 	{
-		fdf_put_lines(mlx, buff_big->map_chars);
-		buff_big = buff_big->next;
+		fdf_put_lines(mlx, buff->map_chars);
+		buff = buff->next;
+	}
+}
+
+void			fdf_print_map_mlx_corr(t_mlx_ptr *mlx)
+{
+	t_map_lines		*map_buff;
+
+	map_buff = mlx->map_iso;
+	while (map_buff != NULL)
+	{
+		fdf_put_lines(mlx, map_buff->map_chars);
+		map_buff = map_buff->next;
 	}
 }

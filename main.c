@@ -32,11 +32,14 @@ void		fdf_debug_print_map(t_map_lines *map)
 
 int 		key_release(int keycode, void *param)
 {
-	(void)param;
 	if (keycode == 53)
-	{
 		exit (0);
-	}
+	if (keycode >= 123 && keycode <= 126)
+		fdf_move_map(keycode, param);
+	if (keycode == 33 || keycode == 30)
+		fdf_zoom_map_xy(keycode, param);
+	if (keycode == 31 || keycode == 35)
+		fdf_multiply_z(keycode, param);
 	return (0);
 }
 
@@ -53,11 +56,12 @@ int 		test(void)
 	return (0);
 }
 
-void		fdf_mlx_manipulation(t_mlx_ptr **mlx_ptrs)
+void		fdf_mlx_manipulation(t_mlx_ptr *mlx)
 {
-	mlx_key_hook((*mlx_ptrs)->win_ptr, test, (void*) 0);
-	mlx_hook((*mlx_ptrs)->win_ptr, 17, 0, closeprog, (void *) 0);
-	mlx_hook((*mlx_ptrs)->win_ptr, 2, 0, key_release, (void *) 0);
+	mlx_key_hook((mlx)->win_ptr, test, (void*) 0);
+	mlx_hook((mlx)->win_ptr, 17, 0, closeprog, (void *) 0);
+	mlx_hook((mlx)->win_ptr, 2, 0, key_release, (void *)mlx);
+
 }
 
 t_mlx_ptr	*mlx_ptr_init()
@@ -72,17 +76,17 @@ t_mlx_ptr	*mlx_ptr_init()
 
 int 		main(int argc, char **argv)
 {
-	t_mlx_ptr	*mlx_ptrs;
-	t_map_lines	*map;
+	t_mlx_ptr	*mlx;
 	int 		fd;
 
-	map = fdf_initiation(&fd, argv[1]);
-	fdf_debug_print_map(map);
-	mlx_ptrs = mlx_ptr_init();
-	fdf_mlx_manipulation(&mlx_ptrs);
-	fdf_debug_print_map_mlx(mlx_ptrs, map);
+	mlx = mlx_ptr_init();
+	mlx->map = fdf_initiation(&fd, argv[1]);
+	mlx->map_iso = mlx->map;
+	fdf_debug_print_map(mlx->map);
+	fdf_mlx_manipulation(mlx);
+	fdf_print_map_mlx(mlx);
 	system("leaks -q fdf");
-	mlx_loop(mlx_ptrs->mlx_ptr);
+	mlx_loop(mlx->mlx_ptr);
 	system("leaks -q fdf");
 	return (0);
 }

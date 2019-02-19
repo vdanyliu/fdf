@@ -132,5 +132,6 @@ t_map_lines		*fdf_initiation(int *fd, char *param)
 		free(line);
 	}
 	fdf_xy_initiation(map);
+	close(*fd);
 	return (map);
 }
