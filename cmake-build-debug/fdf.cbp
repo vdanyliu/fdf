@@ -83,6 +83,9 @@
 		<Unit filename="/Users/vdanyliu/Desktop/fdf/fdf.h">
 			<Option target="fdf"/>
 		</Unit>
+		<Unit filename="/Users/vdanyliu/Desktop/fdf/fdf_copy_map.c">
+			<Option target="fdf"/>
+		</Unit>
 		<Unit filename="/Users/vdanyliu/Desktop/fdf/fdf_error.c">
 			<Option target="fdf"/>
 		</Unit>

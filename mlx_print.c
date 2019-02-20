@@ -137,11 +137,11 @@ void			fdf_print_map_mlx(t_mlx_ptr *mlx)
 	t_map_lines	*buff;
 
 	mlx_clear_window(mlx->mlx_ptr, mlx->win_ptr);
-	fdf_free(mlx->map_iso);
-	mlx->map_iso = fdf_copy_map(mlx->map);
+	fdf_copy_map_full_info(mlx->map, mlx->map_iso);
 	//mlx->map_iso = fdf_center_map(mlx->map_iso);
 	mlx->map_iso = fdf_iso_map(mlx->map_iso);
 	buff = mlx->map_iso;
+	fdf_zoom_map_xy(0, mlx);
 	while (buff != NULL)
 	{
 		fdf_put_lines(mlx, buff->map_chars);
@@ -153,6 +153,7 @@ void			fdf_print_map_mlx_corr(t_mlx_ptr *mlx)
 {
 	t_map_lines		*map_buff;
 
+	mlx_clear_window(mlx->mlx_ptr, mlx->win_ptr);
 	map_buff = mlx->map_iso;
 	while (map_buff != NULL)
 	{

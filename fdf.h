@@ -48,10 +48,15 @@ void					fdf_print_map_mlx_corr(t_mlx_ptr *mlx);
 void					fdf_move_map(int i, void *mlx);
 void					fdf_zoom_map_xy(int i, void *mlx);
 void					fdf_rotate_zaxis(int i, void *mlx);
+void					fdf_rotate_xaxis(int i, void *mlx);
+void					fdf_rotate_yaxis(int i, void *mlx);
 t_map_lines				*fdf_center_map(t_map_lines *map);
 void					fdf_multiply_z(int i, void *mlxv);
 void					fdf_free(t_map_lines *leak);
 t_map_lines				*fdf_iso_map(t_map_lines *map);
 t_map_lines				*fdf_copy_map(t_map_lines *origin);
+t_map_lines				*fdf_add_new_info(t_map_lines *buff, t_map_char *info);
+t_map_lines				*fdf_add_end_map(t_map_lines *map, t_map_lines *buff);
+void					*fdf_copy_map_full_info(t_map_lines *from, t_map_lines *in);
 
 #endif

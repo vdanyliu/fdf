@@ -123,6 +123,33 @@ fdf/fast:
 	$(MAKE) -f CMakeFiles/fdf.dir/build.make CMakeFiles/fdf.dir/build
 .PHONY : fdf/fast
 
+fdf_copy_map.o: fdf_copy_map.c.o
+
+.PHONY : fdf_copy_map.o
+
+# target to build an object file
+fdf_copy_map.c.o:
+	$(MAKE) -f CMakeFiles/fdf.dir/build.make CMakeFiles/fdf.dir/fdf_copy_map.c.o
+.PHONY : fdf_copy_map.c.o
+
+fdf_copy_map.i: fdf_copy_map.c.i
+
+.PHONY : fdf_copy_map.i
+
+# target to preprocess a source file
+fdf_copy_map.c.i:
+	$(MAKE) -f CMakeFiles/fdf.dir/build.make CMakeFiles/fdf.dir/fdf_copy_map.c.i
+.PHONY : fdf_copy_map.c.i
+
+fdf_copy_map.s: fdf_copy_map.c.s
+
+.PHONY : fdf_copy_map.s
+
+# target to generate assembly for a file
+fdf_copy_map.c.s:
+	$(MAKE) -f CMakeFiles/fdf.dir/build.make CMakeFiles/fdf.dir/fdf_copy_map.c.s
+.PHONY : fdf_copy_map.c.s
+
 fdf_error.o: fdf_error.c.o
 
 .PHONY : fdf_error.o
@@ -2076,6 +2103,9 @@ help:
 	@echo "... rebuild_cache"
 	@echo "... edit_cache"
 	@echo "... fdf"
+	@echo "... fdf_copy_map.o"
+	@echo "... fdf_copy_map.i"
+	@echo "... fdf_copy_map.s"
 	@echo "... fdf_error.o"
 	@echo "... fdf_error.i"
 	@echo "... fdf_error.s"

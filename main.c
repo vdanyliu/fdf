@@ -45,6 +45,10 @@ int 		key_release(int keycode, void *param)
 		fdf_multiply_z(keycode, param);
 	if (keycode == 12 || keycode == 13)
 		fdf_rotate_zaxis(keycode, param);
+	if (keycode == 0 || keycode == 1)
+		fdf_rotate_xaxis(keycode, param);
+	if (keycode == 6 || keycode == 7)
+		fdf_rotate_yaxis(keycode, param);
 	return (0);
 }
 
@@ -92,6 +96,7 @@ int 		main(int argc, char **argv)
 	mlx->map_origin = fdf_initiation(&fd, argv[1]);
 	fdf_debug_print_map(mlx->map_origin);
 	mlx->map = fdf_copy_map(mlx->map_origin);
+	mlx->map_iso = fdf_copy_map(mlx->map_origin);
 	fdf_mlx_manipulation(mlx);
 	fdf_print_map_mlx(mlx);
 	system("leaks -q fdf");

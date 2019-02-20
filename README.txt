@@ -16,7 +16,7 @@ o, p - scale z+, z-;
 arrows - right, left, up, down;
 
 C - add color gradient;
-q, w - rotate y+, y-;
+z, x - rotate y+, y-;
 a, s - rotate x+, x-;
-z, x - rotate z+, z-;
+q, w - rotate z+, z-;
 
