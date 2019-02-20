@@ -58,5 +58,6 @@ t_map_lines				*fdf_copy_map(t_map_lines *origin);
 t_map_lines				*fdf_add_new_info(t_map_lines *buff, t_map_char *info);
 t_map_lines				*fdf_add_end_map(t_map_lines *map, t_map_lines *buff);
 void					*fdf_copy_map_full_info(t_map_lines *from, t_map_lines *in);
+void					fdf_deafult(void *mlxv);
 
 #endif

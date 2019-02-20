@@ -258,6 +258,33 @@ fdf_map_manipulation.c.s:
 	$(MAKE) -f CMakeFiles/fdf.dir/build.make CMakeFiles/fdf.dir/fdf_map_manipulation.c.s
 .PHONY : fdf_map_manipulation.c.s
 
+fdf_map_manipulation2.o: fdf_map_manipulation2.c.o
+
+.PHONY : fdf_map_manipulation2.o
+
+# target to build an object file
+fdf_map_manipulation2.c.o:
+	$(MAKE) -f CMakeFiles/fdf.dir/build.make CMakeFiles/fdf.dir/fdf_map_manipulation2.c.o
+.PHONY : fdf_map_manipulation2.c.o
+
+fdf_map_manipulation2.i: fdf_map_manipulation2.c.i
+
+.PHONY : fdf_map_manipulation2.i
+
+# target to preprocess a source file
+fdf_map_manipulation2.c.i:
+	$(MAKE) -f CMakeFiles/fdf.dir/build.make CMakeFiles/fdf.dir/fdf_map_manipulation2.c.i
+.PHONY : fdf_map_manipulation2.c.i
+
+fdf_map_manipulation2.s: fdf_map_manipulation2.c.s
+
+.PHONY : fdf_map_manipulation2.s
+
+# target to generate assembly for a file
+fdf_map_manipulation2.c.s:
+	$(MAKE) -f CMakeFiles/fdf.dir/build.make CMakeFiles/fdf.dir/fdf_map_manipulation2.c.s
+.PHONY : fdf_map_manipulation2.c.s
+
 fdf_math_function.o: fdf_math_function.c.o
 
 .PHONY : fdf_math_function.o
@@ -2118,6 +2145,9 @@ help:
 	@echo "... fdf_map_manipulation.o"
 	@echo "... fdf_map_manipulation.i"
 	@echo "... fdf_map_manipulation.s"
+	@echo "... fdf_map_manipulation2.o"
+	@echo "... fdf_map_manipulation2.i"
+	@echo "... fdf_map_manipulation2.s"
 	@echo "... fdf_math_function.o"
 	@echo "... fdf_math_function.i"
 	@echo "... fdf_math_function.s"

@@ -1,4 +1,5 @@
 file(REMOVE_RECURSE
+  "CMakeFiles/fdf.dir/fdf_map_manipulation2.c.o"
   "CMakeFiles/fdf.dir/fdf_copy_map.c.o"
   "CMakeFiles/fdf.dir/fdf_error.c.o"
   "CMakeFiles/fdf.dir/fdf_free.c.o"

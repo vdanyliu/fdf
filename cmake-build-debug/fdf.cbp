@@ -80,6 +80,9 @@
 				</MakeCommands>
 			</Target>
 		</Build>
+		<Unit filename="/Users/vdanyliu/Desktop/fdf/fdf map_manipulation2.c">
+			<Option target="fdf"/>
+		</Unit>
 		<Unit filename="/Users/vdanyliu/Desktop/fdf/fdf.h">
 			<Option target="fdf"/>
 		</Unit>

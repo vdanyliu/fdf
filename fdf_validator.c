@@ -19,13 +19,14 @@ static int	fdf_rgb_check(char *str)
 	str = str + 2;
 	while(*str)
 	{
-		if ((*str >= 'A' && *str <= 'F') || (*str >= '0' && *str <= '9'))
+		if ((*str >= 'A' && *str <= 'F') || (*str >= '0' && *str <= '9')
+		|| (*str >= 'a' && *str <= 'f'))
 			i--;
 		str++;
 		i++;
 		j++;
 	}
-	if (i != 0 || j != 6)
+	if (i != 0 || j > 6)
 		return (0);
 	return (1);
 }

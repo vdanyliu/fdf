@@ -33,18 +33,19 @@ void	fdf_zoom_map_xy(int i, void *mlxv)
 	t_map_lines		*buff;
 	t_map_lines		*orig;
 	t_mlx_ptr		*mlx;
-	static int 		min_zoom = 1;
+	static int 		min_zoom = 2;
 
 	if (i == 0 || (min_zoom == 1 && i == 33) || (min_zoom == 6 && i == 30))
 	{
-		min_zoom = 1;
+		min_zoom = 2;
 		i == 30 ? min_zoom = 6 : 0;
+		i == 33 ? min_zoom = 1 : 0;
 		return ;
 	}
 	mlx = (t_mlx_ptr *)(mlxv);
 	buff = mlx->map_iso;
 	orig = mlx->map;
-	if (min_zoom >= 2 && i == 33)
+	if (min_zoom >= 1 && i == 33)
 		min_zoom--;
 	if (min_zoom <= 5 && i == 30)
 		min_zoom++;
@@ -66,12 +67,11 @@ void	fdf_multiply_z(int i, void *mlxv)
 	t_map_lines		*buff;
 	t_map_lines		*orig;
 	t_mlx_ptr		*mlx;
-	static int 		min_zoom = 0;
+	static int 		min_zoom = -101;
 
-	if (i == 31)
-		min_zoom--;
-	if (i == 35)
-		min_zoom++;
+	min_zoom = i == 31 ? min_zoom - 1: min_zoom + 1;
+	if (min_zoom >= 7 || min_zoom <= -7)
+		min_zoom= i == 31 ? 0 : 1;
 	mlx = (t_mlx_ptr *)(mlxv);
 	buff = mlx->map;
 	orig = mlx->map_origin;
@@ -86,102 +86,11 @@ void	fdf_multiply_z(int i, void *mlxv)
 	fdf_print_map_mlx(mlx);
 }
 
-void					fdf_change_coor_zaxis(t_map_lines *orig, t_map_lines *buff, double i)
+void	fdf_deafult(void *mlxv)
 {
-	double				x;
-	double				y;
-
-	while (buff)
-	{
-		x = buff->map_chars->x;
-		y = buff->map_chars->y;
-		buff->map_chars->x = (x * cos(i) - y * sin(i));
-		buff->map_chars->y = (y * cos(i) + x * sin(i));
-		buff = buff->next;
-		orig = orig->next;
-	}
-}
-
-void					fdf_rotate_zaxis(int i, void *mlxv)
-{
-	t_map_lines		*buff;
-	t_map_lines		*orig;
 	t_mlx_ptr		*mlx;
-	double 			rad;
 
-	rad = 0.0872665;
-	i == 12 ? rad = -rad : 0;
 	mlx = (t_mlx_ptr *)(mlxv);
-	buff = mlx->map;
-	orig = mlx->map_origin;
-	fdf_change_coor_zaxis(orig, buff, rad);
-	fdf_print_map_mlx(mlx);
-}
-
-void					fdf_change_coor_yaxis(t_map_lines *orig, t_map_lines *buff, double i) {
-	double x;
-	double y;
-	double z;
-
-	while (buff) {
-		x = buff->map_chars->x;
-		y = buff->map_chars->y;
-		z = buff->map_chars->z;
-		buff->map_chars->x = x * cos(i) + z * sin(i);
-		buff->map_chars->y = y;
-		buff->map_chars->z = -x * sin(i) + z * cos(i);
-		buff = buff->next;
-		orig = orig->next;
-	}
-}
-
-void					fdf_rotate_yaxis(int i, void *mlxv)
-{
-	t_map_lines		*buff;
-	t_map_lines		*orig;
-	t_mlx_ptr		*mlx;
-	double 			rad;
-
-	rad = 0.0872665;
-	i == 12 ? rad = -rad : 0;
-	mlx = (t_mlx_ptr *)(mlxv);
-	buff = mlx->map;
-	orig = mlx->map_origin;
-	fdf_change_coor_yaxis(orig, buff, rad);
-	fdf_print_map_mlx(mlx);
-}
-
-void					fdf_change_coor_xaxis(t_map_lines *orig, t_map_lines *buff, double i)
-{
-	double				x;
-	double				y;
-	double				z;
-
-	while (buff)
-	{
-		x = buff->map_chars->x;
-		y = buff->map_chars->y;
-		z = buff->map_chars->z;
-		buff->map_chars->x = x;
-		buff->map_chars->y = (y * cos(i) + z * sin(i));
-		buff->map_chars->z = (-y * sin(i) + z * cos(i));
-		buff = buff->next;
-		orig = orig->next;
-	}
-}
-
-void					fdf_rotate_xaxis(int i, void *mlxv)
-{
-	t_map_lines		*buff;
-	t_map_lines		*orig;
-	t_mlx_ptr		*mlx;
-	double 			rad;
-
-	rad = 0.0872665;
-	i == 12 ? rad = -rad : 0;
-	mlx = (t_mlx_ptr *)(mlxv);
-	buff = mlx->map;
-	orig = mlx->map_origin;
-	fdf_change_coor_xaxis(orig, buff, rad);
+	fdf_copy_map_full_info(mlx->map_origin, mlx->map);
 	fdf_print_map_mlx(mlx);
 }
