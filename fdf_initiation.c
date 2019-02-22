@@ -1,33 +1,16 @@
-//
-// Created by Volodymyr DANYLIUK on 2019-02-06.
-//
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   fdf_initiation.c                                   :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: vdanyliu <marvin@42.fr>                    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2019/02/22 14:23:39 by vdanyliu          #+#    #+#             */
+/*   Updated: 2019/02/22 14:25:38 by vdanyliu         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
 #include "fdf.h"
-
-void			fdf_xy_initiation(t_map_lines *map)
-{
-	t_map_char	*buff;
-	t_map_char	*buff_down;
-	int 		x;
-	int 		y;
-
-	buff = map->map_chars;
-	y = 0;
-	while (buff != NULL)
-	{
-		x = 0;
-		buff_down = buff->down;
-		while (buff != NULL)
-		{
-			buff->x = x;
-			buff->y	= y;
-			x = x + 10;
-			buff = buff->next;
-		}
-		buff = buff_down;
-		y = y + 10;
-	}
-}
 
 t_map_lines		*fdf_add_new_info(t_map_lines *buff, t_map_char *info)
 {
@@ -42,7 +25,7 @@ t_map_lines		*fdf_add_new_info(t_map_lines *buff, t_map_char *info)
 		(buff)->next = NULL;
 		return (buff);
 	}
-	while((buff)->next != NULL)
+	while ((buff)->next != NULL)
 		(buff) = (buff)->next;
 	(buff)->next = (t_map_lines*)malloc(sizeof(*buff));
 	(buff)->next->prev = (buff);
@@ -97,8 +80,8 @@ t_map_lines		*fdf_create_tmap(const char *str)
 {
 	t_map_lines		*buff;
 	t_map_char		*info;
-	char 			**buffstrhead;
-	char 			**buffstr;
+	char			**buffstrhead;
+	char			**buffstr;
 
 	buffstrhead = ft_strsplit(str, ' ');
 	buffstr = buffstrhead;
@@ -136,4 +119,3 @@ t_map_lines		*fdf_initiation(int *fd, char *param)
 	close(*fd);
 	return (map);
 }
-

@@ -80,9 +80,6 @@
 				</MakeCommands>
 			</Target>
 		</Build>
-		<Unit filename="/Users/vdanyliu/Desktop/fdf/fdf map_manipulation2.c">
-			<Option target="fdf"/>
-		</Unit>
 		<Unit filename="/Users/vdanyliu/Desktop/fdf/fdf.h">
 			<Option target="fdf"/>
 		</Unit>
@@ -101,7 +98,13 @@
 		<Unit filename="/Users/vdanyliu/Desktop/fdf/fdf_map_manipulation.c">
 			<Option target="fdf"/>
 		</Unit>
+		<Unit filename="/Users/vdanyliu/Desktop/fdf/fdf_map_manipulation2.c">
+			<Option target="fdf"/>
+		</Unit>
 		<Unit filename="/Users/vdanyliu/Desktop/fdf/fdf_math_function.c">
+			<Option target="fdf"/>
+		</Unit>
+		<Unit filename="/Users/vdanyliu/Desktop/fdf/fdf_put_lines.c">
 			<Option target="fdf"/>
 		</Unit>
 		<Unit filename="/Users/vdanyliu/Desktop/fdf/fdf_validator.c">

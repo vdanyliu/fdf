@@ -1,16 +1,23 @@
-//
-// Created by Volodymyr DANYLIUK on 2019-02-14.
-//
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   fdf_math_function.c                                :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: vdanyliu <marvin@42.fr>                    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2019/02/22 14:08:45 by vdanyliu          #+#    #+#             */
+/*   Updated: 2019/02/22 14:09:30 by vdanyliu         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
 #include "fdf.h"
 
-int 		fdf_16to10(char *str)
+int			fdf_16to10(char *str)
 {
-	char 	*buff;
-	int 	res;
-	int 	power;
-	int 	byte;
-
+	char	*buff;
+	int		res;
+	int		power;
+	int		byte;
 
 	res = 0;
 	byte = 0;
@@ -31,4 +38,38 @@ int 		fdf_16to10(char *str)
 		buff++;
 	}
 	return (res);
+}
+
+int			fdf_digit_check(char *str)
+{
+	if (*str == '-')
+		str++;
+	if (ft_isdigit(*str))
+		return (1);
+	return (0);
+}
+
+void		fdf_xy_initiation(t_map_lines *map)
+{
+	t_map_char	*buff;
+	t_map_char	*buff_down;
+	int			x;
+	int			y;
+
+	buff = map->map_chars;
+	y = 0;
+	while (buff != NULL)
+	{
+		x = 0;
+		buff_down = buff->down;
+		while (buff != NULL)
+		{
+			buff->x = x;
+			buff->y = y;
+			x = x + 10;
+			buff = buff->next;
+		}
+		buff = buff_down;
+		y = y + 10;
+	}
 }

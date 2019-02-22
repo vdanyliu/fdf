@@ -1,6 +1,14 @@
-//
-// Created by Volodymyr DANYLIUK on 2019-02-20.
-//
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   fdf_copy_map.c                                     :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: vdanyliu <marvin@42.fr>                    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2019/02/22 14:26:57 by vdanyliu          #+#    #+#             */
+/*   Updated: 2019/02/22 14:33:08 by vdanyliu         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
 #include "fdf.h"
 
@@ -33,7 +41,8 @@ t_map_lines		*fdf_copy_map(t_map_lines *origin)
 	{
 		while (buff->map_chars->next)
 		{
-			copy_buff = fdf_add_new_info(copy_buff, fdf_copy_info(buff->map_chars));
+			copy_buff = fdf_add_new_info(copy_buff,
+					fdf_copy_info(buff->map_chars));
 			buff = buff->next;
 		}
 		copy_buff = fdf_add_new_info(copy_buff, fdf_copy_info(buff->map_chars));
@@ -51,7 +60,6 @@ void			*fdf_copy_map_full_info(t_map_lines *from, t_map_lines *in)
 
 	frombuff = from;
 	inbuff = in;
-
 	while (frombuff)
 	{
 		inbuff->map_chars->x = frombuff->map_chars->x;

@@ -42,7 +42,6 @@ void					fdf_error(char *str, int error_code);
 int 					fdf_validator(int fd);
 void					fdf_free_split(char **str);
 int						fdf_16to10(char *str);
-void					fdf_debug_print_map(t_map_lines *map);
 void					fdf_print_map_mlx(t_mlx_ptr *mlx);
 void					fdf_print_map_mlx_corr(t_mlx_ptr *mlx);
 void					fdf_move_map(int i, void *mlx);
@@ -59,5 +58,8 @@ t_map_lines				*fdf_add_new_info(t_map_lines *buff, t_map_char *info);
 t_map_lines				*fdf_add_end_map(t_map_lines *map, t_map_lines *buff);
 void					*fdf_copy_map_full_info(t_map_lines *from, t_map_lines *in);
 void					fdf_deafult(void *mlxv);
+void					fdf_put_lines(t_mlx_ptr *mlx, t_map_char *map);
+int						fdf_digit_check(char *str);
+void					fdf_xy_initiation(t_map_lines *map);
 
 #endif

@@ -1,9 +1,18 @@
-//
-// Created by Volodymyr DANYLIUK on 2019-02-06.
-//
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   fdf_validator.c                                    :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: vdanyliu <marvin@42.fr>                    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2019/02/22 14:01:19 by vdanyliu          #+#    #+#             */
+/*   Updated: 2019/02/22 14:08:23 by vdanyliu         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "fdf.h"
 
-static int	fdf_rgb_check(char *str)
+static int		fdf_rgb_check(char *str)
 {
 	int i;
 	int j;
@@ -17,7 +26,7 @@ static int	fdf_rgb_check(char *str)
 	if (*(str + 1) != 'x')
 		return (0);
 	str = str + 2;
-	while(*str)
+	while (*str)
 	{
 		if ((*str >= 'A' && *str <= 'F') || (*str >= '0' && *str <= '9')
 		|| (*str >= 'a' && *str <= 'f'))
@@ -31,19 +40,10 @@ static int	fdf_rgb_check(char *str)
 	return (1);
 }
 
-static int	fdf_digit_check(char *str)
-{
-	if (*str == '-')
-		str++;
-	if (ft_isdigit(*str))
-		return (1);
-	return (0);
-}
-
-static int 	fdf_symbols_cheker(char *str)
+static int		fdf_symbols_cheker(char *str)
 {
 	char		**str_split;
-	char 		**buff;
+	char		**buff;
 	char		**argument;
 
 	str_split = ft_strsplit(str, ' ');
@@ -64,29 +64,25 @@ static int 	fdf_symbols_cheker(char *str)
 	return (0);
 }
 
-static int	fdf_argument_count_cheker(char *str)
+static int		fdf_argument_count_cheker(char *str)
 {
-	static int 	i = 0;
-	int 		k;
-	char 		**str_split;
-	char 		**buff;
+	static unsigned int	i = 0;
+	int					k;
+	char				**str_split;
+	char				**buff;
+	unsigned int		ibuff;
 
+	ibuff = i;
 	str_split = ft_strsplit(str, ' ');
 	buff = str_split;
 	k = 0;
-	if (i == 0)
+	while (*buff++ != NULL)
 	{
-		while (*buff++ != NULL)
-			i++;
-		fdf_free_split(str_split);
-		if (i == 0 || i == 1)
-			return (1);
-		return (0);
+		k++;
+		i++;
 	}
-	else
-		while (*buff++ != NULL)
-			k++;
-	if (k != i)
+	ibuff != 0 ? i = ibuff : 0;
+	if (i == 0 || k == 0 || i != k)
 	{
 		fdf_free_split(str_split);
 		return (1);
@@ -95,7 +91,7 @@ static int	fdf_argument_count_cheker(char *str)
 	return (0);
 }
 
-static int	fdf_valid_line(char *str)
+static int		fdf_valid_line(char *str)
 {
 	char *buff;
 
@@ -105,12 +101,12 @@ static int	fdf_valid_line(char *str)
 	return (0);
 }
 
-int 	fdf_validator(int fd)
+int				fdf_validator(int fd)
 {
-	char 	*line;
-	char 	*leak;
-	size_t 	i;
-	size_t 	flag;
+	char	*line;
+	char	*leak;
+	size_t	i;
+	size_t	flag;
 
 	flag = 0;
 	while (get_next_line(fd, &line))

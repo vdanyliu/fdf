@@ -1,62 +1,22 @@
-//
-// Created by Volodymyr DANYLIUK on 2019-02-15.
-//
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   mlx_print.c                                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: vdanyliu <marvin@42.fr>                    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2019/02/22 14:55:41 by vdanyliu          #+#    #+#             */
+/*   Updated: 2019/02/22 14:57:55 by vdanyliu         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
 #include "fdf.h"
-
-void			fdf_put_line(t_mlx_ptr *mlx, t_map_char *map0, t_map_char *map1)
-{
-	int		dx[2];
-	int		dy[2];
-	int		d[2];
-	int		y;
-	int		x;
-
-	dx[0] = abs(map1->x - map0->x);
-	dy[0] = abs(map1->y - map0->y);
-	dx[1] = -1;
-	if (map0->x < map1->x)
-		dx[1] = 1;
-	dy[1] = -1;
-	if (map0->y < map1->y)
-		dy[1] = 1;
-	d[0] = 0 - dy[0] / 2;
-	if (dx[0] > dy[0])
-		d[0] = dx[0] / 2;
-	x = map0->x;
-	y = map0->y;
-	while (42)
-	{
-		mlx_pixel_put(mlx->win_ptr, mlx->win_ptr, x, y, map0->color);
-		if (x == map1->x && y == map1->y)
-			break;
-		d[1] = d[0];
-		if (d[1] > -dx[0])
-		{
-			d[0] -= dy[0];
-			x += dx[1];
-		}
-		if (d[1] < dy[0])
-		{
-			d[0] += dx[0];
-			y += dy[1];
-		}
-	}
-}
-
-void			fdf_put_lines(t_mlx_ptr *mlx, t_map_char *map)
-{
-	if (map->next != NULL)
-		fdf_put_line(mlx, map, map->next);
-	if (map->down != NULL)
-		fdf_put_line(mlx, map, map->down);
-}
 
 t_map_lines		*fdf_alloc_map_center(t_map_lines *map)
 {
 	t_map_char	*buff;
-	int 		x;
-	int 		y;
+	int			x;
+	int			y;
 
 	x = 0;
 	y = 0;
@@ -71,10 +31,8 @@ t_map_lines		*fdf_alloc_map_center(t_map_lines *map)
 	buff = map->map_chars;
 	while (x > 0 || y > 0)
 	{
-		if (x > 0)
-			buff = buff->next;
-		if (y > 0)
-			buff = buff->down;
+		x > 0 ? buff = buff->next : 0;
+		y > 0 ? buff = buff->down : 0;
 		x--;
 		y--;
 	}
@@ -85,11 +43,11 @@ t_map_lines		*fdf_alloc_map_center(t_map_lines *map)
 
 t_map_lines		*fdf_center_map(t_map_lines *map)
 {
-	t_map_lines *buff;
-	int 		x;
-	int 		y;
-	int 		xc;
-	int 		yc;
+	t_map_lines	*buff;
+	int			x;
+	int			y;
+	int			xc;
+	int			yc;
 
 	buff = map;
 	buff = fdf_alloc_map_center(buff);
@@ -108,9 +66,9 @@ t_map_lines		*fdf_center_map(t_map_lines *map)
 t_map_lines		*fdf_iso_map(t_map_lines *map)
 {
 	t_map_lines	*buff;
-	int 		x;
-	int 		y;
-	int 		z;
+	int			x;
+	int			y;
+	int			z;
 
 	buff = map;
 	while (buff != NULL)
@@ -132,7 +90,6 @@ void			fdf_print_map_mlx(t_mlx_ptr *mlx)
 
 	mlx_clear_window(mlx->mlx_ptr, mlx->win_ptr);
 	fdf_copy_map_full_info(mlx->map, mlx->map_iso);
-	//mlx->map_iso = fdf_center_map(mlx->map_iso);
 	mlx->map_iso = fdf_iso_map(mlx->map_iso);
 	buff = mlx->map_iso;
 	fdf_zoom_map_xy(0, mlx);
