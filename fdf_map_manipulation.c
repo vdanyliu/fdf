@@ -102,5 +102,6 @@ void		fdf_deafult(void *mlxv)
 
 	mlx = (t_mlx_ptr *)(mlxv);
 	fdf_copy_map_full_info(mlx->map_origin, mlx->map);
+	fdf_gradient(NULL, NULL, 0, 0);
 	fdf_print_map_mlx(mlx);
 }

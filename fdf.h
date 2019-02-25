@@ -56,10 +56,12 @@ t_map_lines				*fdf_iso_map(t_map_lines *map);
 t_map_lines				*fdf_copy_map(t_map_lines *origin);
 t_map_lines				*fdf_add_new_info(t_map_lines *buff, t_map_char *info);
 t_map_lines				*fdf_add_end_map(t_map_lines *map, t_map_lines *buff);
-void					*fdf_copy_map_full_info(t_map_lines *from, t_map_lines *in);
+void					fdf_copy_map_full_info(t_map_lines *from, t_map_lines *in);
 void					fdf_deafult(void *mlxv);
 void					fdf_put_lines(t_mlx_ptr *mlx, t_map_char *map);
 int						fdf_digit_check(char *str);
 void					fdf_xy_initiation(t_map_lines *map);
+int 					fdf_gradient(t_map_char *map0, t_map_char *map1, int x, int y);
+void					fdf_gradient_reprint(void *mlxv);
 
 #endif

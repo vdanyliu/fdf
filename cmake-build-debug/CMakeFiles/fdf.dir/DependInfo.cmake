@@ -13,6 +13,7 @@ set(CMAKE_DEPENDS_CHECK_C
   "/Users/vdanyliu/Desktop/fdf/fdf_math_function.c" "/Users/vdanyliu/Desktop/fdf/cmake-build-debug/CMakeFiles/fdf.dir/fdf_math_function.c.o"
   "/Users/vdanyliu/Desktop/fdf/fdf_put_lines.c" "/Users/vdanyliu/Desktop/fdf/cmake-build-debug/CMakeFiles/fdf.dir/fdf_put_lines.c.o"
   "/Users/vdanyliu/Desktop/fdf/fdf_validator.c" "/Users/vdanyliu/Desktop/fdf/cmake-build-debug/CMakeFiles/fdf.dir/fdf_validator.c.o"
+  "/Users/vdanyliu/Desktop/fdf/gradient.c" "/Users/vdanyliu/Desktop/fdf/cmake-build-debug/CMakeFiles/fdf.dir/gradient.c.o"
   "/Users/vdanyliu/Desktop/fdf/libft/ft_atoi.c" "/Users/vdanyliu/Desktop/fdf/cmake-build-debug/CMakeFiles/fdf.dir/libft/ft_atoi.c.o"
   "/Users/vdanyliu/Desktop/fdf/libft/ft_bzero.c" "/Users/vdanyliu/Desktop/fdf/cmake-build-debug/CMakeFiles/fdf.dir/libft/ft_bzero.c.o"
   "/Users/vdanyliu/Desktop/fdf/libft/ft_charcount.c" "/Users/vdanyliu/Desktop/fdf/cmake-build-debug/CMakeFiles/fdf.dir/libft/ft_charcount.c.o"

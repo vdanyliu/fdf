@@ -44,8 +44,6 @@ t_map_lines		*fdf_alloc_map_center(t_map_lines *map)
 t_map_lines		*fdf_center_map(t_map_lines *map)
 {
 	t_map_lines	*buff;
-	int			x;
-	int			y;
 	int			xc;
 	int			yc;
 

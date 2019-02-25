@@ -366,6 +366,33 @@ fdf_validator.c.s:
 	$(MAKE) -f CMakeFiles/fdf.dir/build.make CMakeFiles/fdf.dir/fdf_validator.c.s
 .PHONY : fdf_validator.c.s
 
+gradient.o: gradient.c.o
+
+.PHONY : gradient.o
+
+# target to build an object file
+gradient.c.o:
+	$(MAKE) -f CMakeFiles/fdf.dir/build.make CMakeFiles/fdf.dir/gradient.c.o
+.PHONY : gradient.c.o
+
+gradient.i: gradient.c.i
+
+.PHONY : gradient.i
+
+# target to preprocess a source file
+gradient.c.i:
+	$(MAKE) -f CMakeFiles/fdf.dir/build.make CMakeFiles/fdf.dir/gradient.c.i
+.PHONY : gradient.c.i
+
+gradient.s: gradient.c.s
+
+.PHONY : gradient.s
+
+# target to generate assembly for a file
+gradient.c.s:
+	$(MAKE) -f CMakeFiles/fdf.dir/build.make CMakeFiles/fdf.dir/gradient.c.s
+.PHONY : gradient.c.s
+
 libft/ft_atoi.o: libft/ft_atoi.c.o
 
 .PHONY : libft/ft_atoi.o
@@ -2184,6 +2211,9 @@ help:
 	@echo "... fdf_validator.o"
 	@echo "... fdf_validator.i"
 	@echo "... fdf_validator.s"
+	@echo "... gradient.o"
+	@echo "... gradient.i"
+	@echo "... gradient.s"
 	@echo "... libft/ft_atoi.o"
 	@echo "... libft/ft_atoi.i"
 	@echo "... libft/ft_atoi.s"

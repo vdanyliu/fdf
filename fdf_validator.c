@@ -66,11 +66,11 @@ static int		fdf_symbols_cheker(char *str)
 
 static int		fdf_argument_count_cheker(char *str)
 {
-	static unsigned int	i = 0;
+	static int			i = 0;
 	int					k;
 	char				**str_split;
 	char				**buff;
-	unsigned int		ibuff;
+	int					ibuff;
 
 	ibuff = i;
 	str_split = ft_strsplit(str, ' ');
@@ -104,11 +104,11 @@ static int		fdf_valid_line(char *str)
 int				fdf_validator(int fd)
 {
 	char	*line;
-	char	*leak;
-	size_t	i;
 	size_t	flag;
 
 	flag = 0;
+	if (fd < 0 || (read(fd, NULL, 0) < 0))
+		return (1);
 	while (get_next_line(fd, &line))
 	{
 		if (fdf_valid_line(line) == -1)

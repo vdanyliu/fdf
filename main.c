@@ -33,6 +33,8 @@ static int			key_release(int keycode, void *param)
 		fdf_rotate_yaxis(keycode, param);
 	if (keycode == 15)
 		fdf_deafult(param);
+	if (keycode == 5)
+		fdf_gradient_reprint(param);
 	return (0);
 }
 
@@ -68,6 +70,8 @@ int					main(int argc, char **argv)
 	t_mlx_ptr	*mlx;
 	int			fd;
 
+	if (argc == 1)
+		return (0);
 	mlx = mlx_ptr_init();
 	mlx->map_origin = fdf_initiation(&fd, argv[1]);
 	mlx->map = fdf_copy_map(mlx->map_origin);

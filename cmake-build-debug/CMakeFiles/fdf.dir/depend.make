@@ -34,6 +34,10 @@ CMakeFiles/fdf.dir/fdf_validator.c.o: ../fdf.h
 CMakeFiles/fdf.dir/fdf_validator.c.o: ../fdf_validator.c
 CMakeFiles/fdf.dir/fdf_validator.c.o: ../libft/libft.h
 
+CMakeFiles/fdf.dir/gradient.c.o: ../fdf.h
+CMakeFiles/fdf.dir/gradient.c.o: ../gradient.c
+CMakeFiles/fdf.dir/gradient.c.o: ../libft/libft.h
+
 CMakeFiles/fdf.dir/libft/ft_atoi.c.o: ../libft/ft_atoi.c
 CMakeFiles/fdf.dir/libft/ft_atoi.c.o: ../libft/libft.h
 

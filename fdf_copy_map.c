@@ -32,7 +32,6 @@ t_map_lines		*fdf_copy_map(t_map_lines *origin)
 	t_map_lines	*buff;
 	t_map_lines *copy_head;
 	t_map_lines	*copy_buff;
-	t_map_char	*buff_info;
 
 	copy_head = NULL;
 	copy_buff = NULL;
@@ -53,7 +52,7 @@ t_map_lines		*fdf_copy_map(t_map_lines *origin)
 	return (copy_head);
 }
 
-void			*fdf_copy_map_full_info(t_map_lines *from, t_map_lines *in)
+void			fdf_copy_map_full_info(t_map_lines *from, t_map_lines *in)
 {
 	t_map_lines		*frombuff;
 	t_map_lines		*inbuff;

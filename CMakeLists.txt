@@ -12,6 +12,6 @@ file(GLOB SOURCES
 add_executable(fdf
         ${SOURCES})
 
-#set(GCC_COVERAGE_COMPILE_FLAGS "-Wall -Wextra -Werror")
-#set(CMAKE_C_FLAGS "${CMAKE_C_FLAGS} ${GCC_COVERAGE_COMPILE_FLAGS}" )
+set(GCC_COVERAGE_COMPILE_FLAGS "-Wall -Wextra -Werror")
+set(CMAKE_C_FLAGS "${CMAKE_C_FLAGS} ${GCC_COVERAGE_COMPILE_FLAGS}" )
 target_link_libraries(fdf -lmlx "-framework OpenGL" "-framework AppKit")

@@ -110,6 +110,9 @@
 		<Unit filename="/Users/vdanyliu/Desktop/fdf/fdf_validator.c">
 			<Option target="fdf"/>
 		</Unit>
+		<Unit filename="/Users/vdanyliu/Desktop/fdf/gradient.c">
+			<Option target="fdf"/>
+		</Unit>
 		<Unit filename="/Users/vdanyliu/Desktop/fdf/libft/ft_atoi.c">
 			<Option target="fdf"/>
 		</Unit>

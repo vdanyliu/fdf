@@ -82,3 +82,12 @@ void			fdf_rotate_xaxis(int i, void *mlxv)
 	fdf_change_coor(0, orig, buff, rad);
 	fdf_print_map_mlx(mlx);
 }
+
+void			fdf_gradient_reprint(void *mlxv)
+{
+	t_mlx_ptr	*mlx;
+
+	mlx = (t_mlx_ptr *)(mlxv);
+	fdf_gradient(NULL, NULL, 1, 1);
+	fdf_print_map_mlx_corr(mlx);
+}

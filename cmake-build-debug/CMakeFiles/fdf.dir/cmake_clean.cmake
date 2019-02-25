@@ -8,6 +8,7 @@ file(REMOVE_RECURSE
   "CMakeFiles/fdf.dir/fdf_math_function.c.o"
   "CMakeFiles/fdf.dir/fdf_put_lines.c.o"
   "CMakeFiles/fdf.dir/fdf_validator.c.o"
+  "CMakeFiles/fdf.dir/gradient.c.o"
   "CMakeFiles/fdf.dir/libft/ft_atoi.c.o"
   "CMakeFiles/fdf.dir/libft/ft_bzero.c.o"
   "CMakeFiles/fdf.dir/libft/ft_charcount.c.o"

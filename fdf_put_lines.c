@@ -20,8 +20,8 @@ static void		fdf_put_line(t_mlx_ptr *mlx, t_map_char *map0, t_map_char *map1)
 	int		y;
 	int		x;
 
-	dx[0] = abs(map1->x - map0->x);
-	dy[0] = abs(map1->y - map0->y);
+	dx[0] = fabs(map1->x - map0->x);
+	dy[0] = fabs(map1->y - map0->y);
 	dx[1] = map0->x < map1->x ? 1 : -1;
 	dy[1] = map0->y < map1->y ? 1 : -1;
 	d[0] = dx[0] > dy[0] ? dx[0] / 2 : 0 - dy[0] / 2;
@@ -29,7 +29,8 @@ static void		fdf_put_line(t_mlx_ptr *mlx, t_map_char *map0, t_map_char *map1)
 	y = map0->y;
 	while (42)
 	{
-		mlx_pixel_put(mlx->win_ptr, mlx->win_ptr, x, y, map0->color);
+		mlx_pixel_put(mlx->win_ptr, mlx->win_ptr, x, y,
+				fdf_gradient(map0, map1, x, y));
 		if (x == map1->x && y == map1->y)
 			break ;
 		d[1] = d[0];
